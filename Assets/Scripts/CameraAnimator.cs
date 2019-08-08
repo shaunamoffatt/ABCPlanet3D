@@ -33,30 +33,30 @@ public class CameraAnimator : MonoBehaviour
         anim = GetComponent<Animator>();
 
     }
-
-
-
+    
     void Update()
     {
-       
-
-        if (GM.gameState == GameState.SUN && animatorState != GM.gameState)
+        //if the gamestate has changed but not updated the cameraAnimator..
+        //...animator state. Time to animate.
+        //if(GM.previousState != null)
+        if (GM.gameState != animatorState)
         {
-
-            animatorState = GameState.SUN;
-            Debug.Log(GM.gameState.ToString());
-            anim.SetTrigger("SunClick");
+            Debug.Log("Change animation");
+            ChangeAnimation();
         }
-        if (GM.gameState == GameState.MAIN && animatorState != GM.gameState)
-        {
-            animatorState = GameState.MAIN;
-            anim.SetTrigger("SunExit");
-            
-        }
-
-
     }
 
+    /// <summary>
+    /// Animation Triggers on the camera are named so that it show what transition state has just happened
+    /// For eg. if going from the main view to sun view the trigger is named "mainsun"
+    /// going from the sun view to the main is named "sunmain" etc.
+    /// </summary>
+    private void ChangeAnimation()
+    {
+        animatorState = GM.gameState;
+        Debug.Log(GM.previousState.ToString().ToLower() + GM.gameState.ToString().ToLower());
+        anim.SetTrigger(GM.previousState.ToString().ToLower() + GM.gameState.ToString().ToLower());
+    }
 }
 
 
