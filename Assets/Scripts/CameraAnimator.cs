@@ -22,7 +22,6 @@ public class CameraAnimator : MonoBehaviour
     {
         GM.SetGameState(GameState.MAIN);
         anim = GetComponent<Animator>();
-
     }
     
     /// <summary>
