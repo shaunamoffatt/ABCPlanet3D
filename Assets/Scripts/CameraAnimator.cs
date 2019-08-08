@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿using UnityEngine;
 
 public class CameraAnimator : MonoBehaviour
 {
     private Animator anim;
     private GameManager GM;
-
-    // Start is called before the first frame update
 
     void Awake()
     {
@@ -23,7 +17,6 @@ public class CameraAnimator : MonoBehaviour
         if(GM.previousState != GM.gameState)
             ChangeAnimation();
     }
-
 
     void Start()
     {
@@ -44,5 +37,3 @@ public class CameraAnimator : MonoBehaviour
         anim.SetTrigger(GM.previousState.ToString().ToLower() + GM.gameState.ToString().ToLower());
     }
 }
-
-

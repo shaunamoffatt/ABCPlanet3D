@@ -1,8 +1,4 @@
-﻿using UnityEngine;
-using System.Collections;
-
-// Game States
-// for now ill only have 3.. just a few more to come
+﻿
 public enum GameState { MAIN, SUN, EARTH , NULL}
 
 public delegate void OnStateChangeHandler();
@@ -13,16 +9,21 @@ public class GameManager
     private static GameManager instance = null;
     public event OnStateChangeHandler OnStateChange;
     public GameState gameState { get; private set; }
-    //initpreviousState to null
     public GameState previousState { get; set; }
+
+    private static readonly object padlock = new object();
+
     public static GameManager Instance
     {
         get
         {
-            if (GameManager.instance == null)
+            lock (padlock)
             {
-                //GameManager.DontDestroyOnLoad(GameManager.instance);
-                GameManager.instance = new GameManager();
+                if (GameManager.instance == null)
+                {
+                    //GameManager.DontDestroyOnLoad(GameManager.instance);
+                    GameManager.instance = new GameManager();
+                }
             }
             return GameManager.instance;
         }

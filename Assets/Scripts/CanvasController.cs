@@ -31,6 +31,3 @@ public class CanvasController : MonoBehaviour
         GM.SetGameState(GameState.MAIN);
     }
 }
-
-
-
