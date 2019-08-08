@@ -60,7 +60,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\CameraController.cs" />
+    <Compile Include="Assets\Scripts\BillboardSprite.cs" />
+    <Compile Include="Assets\Scripts\CameraAnimator.cs" />
+    <Compile Include="Assets\Scripts\CanvasController.cs" />
     <Compile Include="Assets\Scripts\EyeController.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\TouchController.cs" />
+    <None Include="Assets\Shaders\Toon.shader" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/Shauna/Documents/GitHub/AlphabetPlanets/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

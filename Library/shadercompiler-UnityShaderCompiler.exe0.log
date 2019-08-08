@@ -33,3 +33,10 @@ Cmd: initializeCompiler
 Cmd: preprocess
   error: 2 plat 21 at (12): Surface shader function 'surf' not found
   insize=433 outsize=378 ok=0
+<<<<<<< HEAD
+=======
+Cmd: initializeCompiler
+Cmd: preprocess
+  error: 2 plat 21 at (12): Surface shader function 'surf' not found
+  insize=433 outsize=378 ok=0
+>>>>>>> development
